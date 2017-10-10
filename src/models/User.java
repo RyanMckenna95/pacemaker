@@ -3,14 +3,15 @@ import static com.google.common.base.MoreObjects.toStringHelper;
 import com.google.common.base.Objects;
 public class User 
 {
+  static long counter=01;
+  public Long id;
   public String firstName;
   public String lastName;
   public String email;
   public String password;
   
-  static long counter=01;
   
-  public Long id;
+
   
   @Override  
   public int hashCode()  
@@ -34,7 +35,8 @@ public class User
   @Override
   public String toString()
   {
-	  return toStringHelper(this).addValue(firstName)
+	  return toStringHelper(this).addValue(id)
+			  .addValue(firstName)
 			  .addValue(lastName)
 			  .addValue(password)
 			  .addValue(email)
